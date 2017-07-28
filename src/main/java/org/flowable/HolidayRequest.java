@@ -20,14 +20,17 @@ import java.util.Scanner;
 public class HolidayRequest {
 
     public static void main(String[] args) {
-        ProcessEngineConfiguration cfg = new StandaloneProcessEngineConfiguration()
-                .setJdbcUrl("jdbc:h2:mem:flowable;DB_CLOSE_DELAY=-1")
-                .setJdbcUsername("sa")
-                .setJdbcPassword("")
-                .setJdbcDriver("org.h2.Driver")
-                .setDatabaseSchemaUpdate(ProcessEngineConfiguration.DB_SCHEMA_UPDATE_TRUE);
+//        ProcessEngineConfiguration cfg = new StandaloneProcessEngineConfiguration()
+//                .setJdbcUrl("jdbc:h2:mem:flowable;DB_CLOSE_DELAY=-1")
+//                .setJdbcUsername("sa")
+//                .setJdbcPassword("")
+//                .setJdbcDriver("org.h2.Driver")
+//                .setDatabaseSchemaUpdate(ProcessEngineConfiguration.DB_SCHEMA_UPDATE_TRUE);
+//
+//        ProcessEngine processEngine = cfg.buildProcessEngine();
 
-        ProcessEngine processEngine = cfg.buildProcessEngine();
+        ProcessEngine processEngine = ProcessEngines.getDefaultProcessEngine();
+
 
         //部署流程
         RepositoryService repositoryService = processEngine.getRepositoryService();
